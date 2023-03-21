@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import styled from "styled-components";
 import Layout from "./Layout";
+import CateList from "./shop/CateList";
+import Itm from "./shop/Itm";
 import List from "./shop/List";
 import ListAll from "./shop/ListAll";
 
@@ -17,14 +19,15 @@ const App = () => {
     useEffect(() => {
         getShopData();
     }, [])
-    console.log(shopData);
 
 
     return (
         <Routes>
-            <Route path="/" element={<Layout />}>
+            <Route path="/" element={<Layout shopData={shopData} />}>
                 <Route index element={<List />} />
-                <Route path="/all" element={<ListAll shopData={shopData} />} />
+                <Route path="all" element={<ListAll shopData={shopData} />} />
+                <Route path=":cate" element={<CateList shopData={shopData} />} />
+                <Route path="detail/:itm" element={<Itm shopData={shopData} />} />
             </Route>
         </Routes>
     )
