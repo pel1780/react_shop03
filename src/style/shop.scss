@@ -3,33 +3,8 @@
 @import './common';
 @import './mixin';
 
-.itm {
-    figure {
-        @include Itm;
-        margin-bottom: 10px;
-
-        img {
-            width: 100%;
-            height: 184px;
-            object-fit: cover;
-        }
-    }
-
-    strong {
-        display: block;
-        margin: 0 0 10px 0;
-        font-weight: 300;
-        min-height: 40px;
-    }
-
-    p {
-        font-size: 14px;
-        font-weight: 300;
-    }
-}
-
 .header {
-    position: fixed;
+    position: relative;
     inset: 0 0 auto 0;
     z-index: 999;
 
@@ -40,6 +15,10 @@
         @include display(flex, 0);
         justify-content: center;
         align-items: center;
+    }
+
+    i {
+        font-size: 30px;
     }
 }
 
@@ -57,5 +36,31 @@ nav {
     @include inner;
     @include display(grid, 40px 20px);
     grid-template-columns: repeat(6, 1fr);
-    padding: 200px 0 0 0;
+
+
+    .itm {
+        figure {
+            @include Itm;
+            margin-bottom: 10px;
+
+            img {
+                width: 100%;
+                height: 184px;
+                object-fit: cover;
+            }
+        }
+
+        strong {
+            display: block;
+            margin: 0 0 10px 0;
+            font-weight: 300;
+            min-height: 40px;
+        }
+
+        p {
+            font-size: 14px;
+            font-weight: 300;
+        }
+    }
+
 }

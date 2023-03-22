@@ -15,7 +15,8 @@ const CateList = ({ shopData }) => {
                                     <img src={it.api_featured_image} alt="" />
                                 </figure>
                                 <strong>{it.name}</strong>
-                                <p>{it.description.substr(0, 100)}{it.description.length > 100 && '...'}</p>
+                                <em>{it.price}</em>
+                                {it.description && <p>{it.description.substr(0, 100)}{it.description.length > 100 && '...'}</p>}
                             </Link>
                         </li>
                     )
