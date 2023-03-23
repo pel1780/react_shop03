@@ -11,11 +11,12 @@ const Nav = ({ shopData }) => {
 
 
     return (
-        <nav className="Nav">
+        <nav className="gnb inner">
             <ul>
                 {/* <li>path: {pathname}</li> */}
-                <li><Link to='/'>home</Link></li>
-                <li><Link to='/all'>all list</Link></li>
+                <li><Link to='/all'>
+                    <i className="xi-bars"></i>
+                </Link></li>
                 {
                     categoryItm.map((it, idx) => {
                         return (

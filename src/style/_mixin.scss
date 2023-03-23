@@ -1,17 +1,17 @@
-$defaultSize: 1410px;
-$border : 1px solid #f7f7f7;
-
-@mixin inner {
-    width: $defaultSize;
-    margin: 0 auto;
+@mixin layout($_dis, $_gap) {
+    display: $_dis;
+    gap: $_gap;
 }
 
-@mixin display($display, $gap) {
-    display: $display;
-    gap: $gap;
+@mixin btn {
+    background: transparent;
+    outline: none;
+    border: none;
+    font-family: 'Outfit', 'Noto Sans KR', sans-serif;
 }
 
-@mixin Itm {
-    border: $border;
-    padding: 10px;
+@mixin position($inset, $p_x, $p_y) {
+    position: absolute;
+    inset: $inset;
+    transform: translate($p_x, $p_y);
 }

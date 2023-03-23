@@ -3,7 +3,7 @@ import { Link, useSearchParams } from "react-router-dom";
 const SearchResult = ({ shopData }) => {
     const [search, setSeach] = useSearchParams();
     const r = search.get('q');
-    const searchResult = shopData.filter(it => it.name.toUpperCase().includes(r.toUpperCase()));
+    const searchResult = shopData.filter(it => it.name.toUpperCase().includes(r.toUpperCase()) || it.description?.toUpperCase().includes(r.toUpperCase()));
     console.log(searchResult);
     return (
         <>

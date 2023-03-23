@@ -35,3 +35,8 @@ body {
 p {
     word-break: keep-all;
 }
+
+.slick-track,
+.slcik-slide {
+    transition-delay: 0.3ms;
+}
