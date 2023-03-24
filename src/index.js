@@ -5,6 +5,7 @@ import './style/shop.scss';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 import Scrolltop from './pages/Scrolltop';
+import ToTop from './pages/ToTop';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

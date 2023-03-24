@@ -4,3 +4,35 @@
     width: $w;
     margin: 0 auto;
 }
+
+.itm {
+    .imgCase {
+        border: $line;
+        padding: 10px;
+        margin-bottom: 20px;
+
+        img {
+            object-fit: cover;
+            width: 100%;
+            height: 205px;
+        }
+    }
+
+    .itmTit {
+        margin-bottom: 10px;
+        font-weight: 300;
+        min-height: 48px;
+    }
+
+    .itmDesc {
+        font-size: 14px;
+        font-weight: 300;
+        margin-bottom: 10px;
+        height: 56px;
+    }
+
+    .itmPrice {
+        font-size: 14px;
+        font-weight: 500;
+    }
+}

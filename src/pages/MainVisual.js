@@ -12,7 +12,7 @@ const MainVisual = () => {
         dots: true,
     }
     return (
-        < section >
+        < section className='MainVisual'>
             <Slide {...slideOption} className='MainSlide'>
                 {
                     MainData.map((it, idx) => {

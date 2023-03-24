@@ -129,25 +129,139 @@ main {
         }
     }
 
-    .slick-dots {
-        @include position(auto auto 50px 50%, -50%, 0);
+    .MainVisual {
+        .slick-dots {
+            @include position(auto auto 50px 50%, -50%, 0);
 
-        >li {
-            display: inline-block;
-            font-size: 0;
+            >li {
+                display: inline-block;
+                font-size: 0;
 
-            button {
-                @include btn;
-                width: 100px;
-                height: 5px;
-                margin: 0 2px;
-                background: $gc;
-                transition: 0.5s;
-            }
+                button {
+                    @include btn;
+                    width: 100px;
+                    height: 5px;
+                    margin: 0 2px;
+                    background: $gc;
+                    transition: 0.5s;
+                }
 
-            &.slick-active button {
-                background: $mc;
+                &.slick-active button {
+                    background: $mc;
+                }
             }
         }
     }
+
+    .MainSlideList {
+        position: relative;
+        padding: $sp;
+
+        .CateTit {
+
+            h2 {
+                font-size: 50px;
+                font-weight: 500;
+                margin-bottom: 50px;
+            }
+        }
+
+        .slidelist {
+            margin: 0 -10px;
+
+            .itm {
+                padding: 0 10px;
+            }
+        }
+
+        .arrow {
+            @include position(50% auto auto 50%, 0, 0);
+            @include btn;
+            font-size: 0;
+            width: 30px;
+            height: 30px;
+            border-left: $line;
+            border-top: $line;
+            border-color: #666;
+            cursor: pointer;
+        }
+
+        .prev {
+            margin-left: -700px;
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
+
+        .next {
+            margin-left: 700px;
+            transform: translate(-50%, -50%) rotate(135deg);
+        }
+
+        .slick-dots {
+            margin-top: 20px;
+            text-align: center;
+
+            >li {
+                display: inline-block;
+                font-size: 0;
+
+                button {
+                    @include btn;
+                    width: 30px;
+                    height: 5px;
+                    margin: 0 2px;
+                    background: $gc;
+                    transition: 0.5s;
+                }
+
+                &.slick-active button {
+                    background: $mc;
+                }
+            }
+        }
+    }
+
+    .mainTab {
+        padding: $sp;
+        background: #f9f9f9;
+
+        .inner {
+            padding: 20px 0 0 0;
+        }
+
+        .menu {
+            @include layout(flex, 30px);
+            justify-content: center;
+
+            li {
+                background: $mc;
+                padding: 5px 10px;
+                border: $line;
+            }
+        }
+    }
+}
+
+.CateList {
+    padding: 80px 0;
+
+    .CateTit {
+        position: relative;
+        padding: 100px 0;
+
+        h2 {
+            font-size: 50px;
+            font-weight: 500;
+        }
+
+        ul {
+            @include position(auto 0 10px auto, 0, 0);
+            @include layout(flex, 20px);
+        }
+    }
+
+    .list {
+        @include layout(grid, 30px 15px);
+        grid-template-columns: repeat(6, 1fr);
+    }
+
 }

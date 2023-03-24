@@ -7,9 +7,13 @@ const Scrolltop = () => {
     const scrTop = () => {
         window.scrollTo(0, 0);
     }
+
     useEffect(() => {
-        scrTop();
-    }, [pathname])
+        if (!pathname.includes('/tab')) {
+            scrTop();
+        }
+    }, [pathname]);
+
     return null;
 }
 

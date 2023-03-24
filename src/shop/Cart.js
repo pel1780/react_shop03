@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Cart = ({ shopData, cart, setCart }) => {
+const Cart = ({ shopData, cart, setCart, sw }) => {
 
     const allPrice = cart.reduce((current, next) => (current) + Number(next.price * next.num), 0);
     const cartModify = (id) => {
@@ -18,8 +18,8 @@ const Cart = ({ shopData, cart, setCart }) => {
                         <li key={it.id}>
                             {it.id}
                             {it.name}
-                            {it.description}
-                            {it.price}
+                            {parseInt(it.price * sw)}원
+                            {it.price * sw}
                             {it.num}
                             <button onClick={() => cartModify(it.id)}>+</button>
                             <img src={it.img} alt="" />

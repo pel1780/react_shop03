@@ -1,11 +1,15 @@
 import { useState } from "react";
-import { Link, Outlet, Route, Routes } from "react-router-dom";
 import MainList from "./MainList";
 import MainSlideList from "./MainSlideList";
 import MainVisual from "./MainVisual";
 
-const Main = ({ shopData, sw, cate }) => {
-    const TabData = ['lip_gloss', 'cream', 'palette', 'concealer']
+const Main = ({ shopData, sw }) => {
+    const [tab, setTab] = useState(0);
+    const TabData = [
+        { tit: 'lip_gloss', con: <MainSlideList cate={'lip_gloss'} shopData={shopData} sw={sw} /> },
+        { tit: 'cream', con: <MainSlideList cate={'cream'} shopData={shopData} sw={sw} /> },
+        { tit: 'palette', con: <MainSlideList cate={'palette'} shopData={shopData} sw={sw} /> },
+    ]
     return (
         <main>
             <MainVisual />
@@ -15,15 +19,11 @@ const Main = ({ shopData, sw, cate }) => {
             <div className="mainTab">
                 <ul className="menu">
                     {
-                        TabData.map((it, idx) => <li key={idx}>
-                            <Link to={`/tab/${it}`}>
-                                {it}
-                            </Link>
-                        </li>)
+                        TabData.map((it, idx) => <li key={idx} onClick={() => setTab(idx)}>{it.tit}</li>)
                     }
                 </ul>
                 <div className="con">
-                    <Outlet />
+                    {TabData[tab].con}
                 </div>
             </div>
         </main>
